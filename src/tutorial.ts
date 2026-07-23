@@ -1,13 +1,12 @@
-console.log("typescript tutorial")
+let awesomeName: string = "shakeAndBake"
+awesomeName = "something" // valid
+awesomeName = awesomeName.toUpperCase() // only methods of strings
+// awesomeName = 23 // error
 
-interface someValue {
-    name: string
-    id: number
-}
+let amount: number = 20
+amount = 12 - 1
+// amount = "word" // error
 
-const someObj: someValue = {
-    name: "random",
-    id: 0,
-}
-
-console.log(someObj)
+let isAwesome: boolean = false
+isAwesome = true
+// isAwesome = "shakeAndBake" // error
