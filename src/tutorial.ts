@@ -1,8 +1,8 @@
-// with union types it is possible to set up multiple valid values or types for a variable
-let tax: number | string = 10
-tax = "$10"
-tax = 10
+let notSure: any = 4
+notSure = "notSure"
+notSure = false
+notSure = () => {
+    console.log(notSure)
+}
 
-let requestStatus: "pending" | "success" | "error" = "pending"
-let responseStatus: "success" | 1 | true = "success"
-
+let random // same as let random: any
