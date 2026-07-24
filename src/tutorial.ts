@@ -1,23 +1,11 @@
-// Practical example – type inference
-const books = ["1984", "Brave New World", "Last wish"]
-let foundBook: string | undefined
+let prices: number[] = [100, 50, 45]
+// prices: number[] = [100, true, "45"] // not valid
+// prices.push("discount") // not valid
 
-for (let book of books) {
-    if (book === "1984") {
-        foundBook = book
-        foundBook = foundBook.toUpperCase()
-        break
-    }
-}
-console.log(foundBook?.length)
+let fruits: string[] = ["apple", "orange"]
 
-// Practical example – union type
-let orderStatus: "processing" | "shipped" | "delivered"
-orderStatus = "processing"
-orderStatus = "delivered"
-// orderStatus = "cancelled" // is not valid
+// let values: [] = [",", 2, "."] // means that the array must always be empty. that's why this is not valid
+let things: any[] = ["", 0, false] // an array of values of any type
 
-let discount: number | string
-discount = 20
-discount = "$20"
-// discount = true // is not valid
+// let array1: string[] | boolean[] = []
+let array2: (string | boolean)[] = ["apple", true, "orange", false] // same as previous line
