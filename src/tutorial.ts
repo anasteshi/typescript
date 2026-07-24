@@ -1,11 +1,9 @@
-let prices: number[] = [100, 50, 45]
-// prices: number[] = [100, true, "45"] // not valid
-// prices.push("discount") // not valid
+// Practical example – arrays
+let temperatures: number[] = [30, 22, 42]
+// temperatures.push("22 degrees") // is not valid
 
-let fruits: string[] = ["apple", "orange"]
+let colors: string[] = ["black", "white"]
+// colors.push(true) // is not valid
 
-// let values: [] = [",", 2, "."] // means that the array must always be empty. that's why this is not valid
-let things: any[] = ["", 0, false] // an array of values of any type
-
-// let array1: string[] | boolean[] = []
-let array2: (string | boolean)[] = ["apple", true, "orange", false] // same as previous line
+let mixedArray: (number | string)[] = ["jack", 100, "anna"]
+// mixedArray.unshift(false) // not valid
