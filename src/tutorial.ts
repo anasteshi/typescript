@@ -1,10 +1,13 @@
-function sayHi(name: string) {
-    console.log(`Hi, ${name.toUpperCase()}!`)
+function calculatePriceWithDiscount(price: number): number {
+    // second column is for return type
+    const hasDiscount = true
+    if (!hasDiscount) {
+        // return "Discount Applied" // invalid
+        return price
+    }
+
+    return price * 0.9
 }
 
-//- any
-//- config
-//- type
-
-sayHi("Anastasiia")
-sayHi("Stanislav")
+const finalPrice = calculatePriceWithDiscount(200)
+console.log(finalPrice)
