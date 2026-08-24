@@ -1,10 +1,10 @@
-let bike: { brand: string; year: number } = { brand: "yamaha", year: 2010 }
-// bike.year = "old"
+function sayHi(name: string) {
+    console.log(`Hi, ${name.toUpperCase()}!`)
+}
 
-let laptop: { brand: string; year: number } = { brand: "dell", year: 2020 }
-// let laptop1: { brand: string; year: number } = { brand: "hp" }
+//- any
+//- config
+//- type
 
-let product1 = { title: "shirt", price: 20 }
-let product2 = { title: "pants" }
-let products: { title: string; price?: number }[] = [product1, product2]
-// products.push({ title: "shoes", price: "expensive" }) // invalid
+sayHi("Anastasiia")
+sayHi("Stanislav")
