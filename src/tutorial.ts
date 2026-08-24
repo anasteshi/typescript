@@ -1,18 +1,10 @@
-let car: { brand: string; year: number } = { brand: "toyota", year: 2020 }
+let bike: { brand: string; year: number } = { brand: "yamaha", year: 2010 }
+// bike.year = "old"
 
-car.brand = "ford" // valid
+let laptop: { brand: string; year: number } = { brand: "dell", year: 2020 }
+// let laptop1: { brand: string; year: number } = { brand: "hp" }
 
-let car1: { brand: string; year: number } = { brand: "audi", year: 2022 }
-
-let book = { title: "book", cost: 20 }
-let pen = { title: "pen", cost: 5 }
-let notebook = { title: "notebook" }
-
-let items: { title: string; readonly cost?: number }[] = [
-    book,
-    pen,
-    notebook,
-] // ?: optional property
-
-// items[0].cost = 0 // invalid since cost is readonly
-items[0].title = "free book"
+let product1 = { title: "shirt", price: 20 }
+let product2 = { title: "pants" }
+let products: { title: string; price?: number }[] = [product1, product2]
+// products.push({ title: "shoes", price: "expensive" }) // invalid
