@@ -1,12 +1,6 @@
-const names: string[] = ["anastasiia", "viktoriia", "diana", "irene"]
-
-function isNameInList(name: string): boolean {
-    return names.includes(name)
+function calculatePrice(price: number, discount?: number): number {
+    // ?: is optional function parameter
+    return price - (discount || 0) // if discount is true – discount, if false – 0
 }
 
-let nameToCheck = "anastasiia"
-if (isNameInList(nameToCheck)) {
-    console.log(`${nameToCheck} is on the list!`)
-} else {
-    console.log(`${nameToCheck} is not on the list...`)
-}
+let priceAfterDiscount = calculatePrice(100, 20)
