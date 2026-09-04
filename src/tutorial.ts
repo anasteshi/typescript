@@ -1,18 +1,14 @@
-function calculatePrice(price: number, discount?: number): number {
-    // ?: is optional function parameter
-    return price - (discount || 0) // if discount is true – discount, if false – 0
+function sum(message: string, ...numbers: number[]): string {
+    // ...name: type[] is rest function parameter syntax
+    const doubled = numbers.map((num) => num * 2)
+    console.log(doubled)
+
+    const total = numbers.reduce((prev, curr) => {
+        return prev + curr
+    }, 0)
+
+    return `${message} ${total}`
 }
 
-let priceAfterDiscount = calculatePrice(100, 20)
-
-function calculateScore(
-    initialScore: number,
-    penaltyPoints: number = 0,
-): number {
-    // = 0 is default function parameter syntax
-
-    return initialScore - penaltyPoints
-}
-
-let scoreAfterPenalty = calculateScore(100 - 20)
-let scoreWithoutPenalty = calculateScore(300)
+let result = sum("The total is:", 1, 2, 3, 4, 5)
+console.log(result)
