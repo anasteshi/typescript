@@ -1,13 +1,12 @@
-function calculatePriceWithDiscount(price: number): number {
-    // second column is for return type
-    const hasDiscount = true
-    if (!hasDiscount) {
-        // return "Discount Applied" // invalid
-        return price
-    }
+const names: string[] = ["anastasiia", "viktoriia", "diana", "irene"]
 
-    return price * 0.9
+function isNameInList(name: string): boolean {
+    return names.includes(name)
 }
 
-const finalPrice = calculatePriceWithDiscount(200)
-console.log(finalPrice)
+let nameToCheck = "anastasiia"
+if (isNameInList(nameToCheck)) {
+    console.log(`${nameToCheck} is on the list!`)
+} else {
+    console.log(`${nameToCheck} is not on the list...`)
+}
