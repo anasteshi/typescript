@@ -16,3 +16,18 @@ function createUser(user: User): User {
 
     return user
 }
+
+type StringOrNumber = string | number
+
+let value: StringOrNumber
+value = "Computer Science"
+value = 122
+
+type Theme = "light" | "dark"
+let theme: Theme
+theme = "dark"
+
+function setTheme(t: Theme) {
+    theme = t
+}
+setTheme("light")
