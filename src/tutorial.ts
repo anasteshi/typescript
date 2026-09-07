@@ -1,33 +1,27 @@
-type User = { id: number; name: string; isActive: boolean }
+type Employee = { id: number; name: string; department: string }
+type Manager = { id: number; name: string; employees: Employee[] }
+type Staff = Employee | Manager
 
-const john: User = {
-    id: 1,
-    name: "john",
-    isActive: true,
-}
-const susan: User = {
-    id: 1,
-    name: "susan",
-    isActive: false,
-}
-
-function createUser(user: User): User {
-    console.log(`Hello there ${user.name.toUpperCase()} !!!`)
-
-    return user
+function printStaffDetails(staff: Staff): void {
+    if ("employees" in staff) {
+        console.log(
+            `${staff.name} is a manager that is the boss of ${staff.employees.length} employees`,
+        )
+    } else {
+        console.log(
+            `${staff.name} is an employee in the ${staff.department} department`,
+        )
+    }
+    console.log()
 }
 
-type StringOrNumber = string | number
-
-let value: StringOrNumber
-value = "Computer Science"
-value = 122
-
-type Theme = "light" | "dark"
-let theme: Theme
-theme = "dark"
-
-function setTheme(t: Theme) {
-    theme = t
+const employee1: Employee = { id: 1, name: "Alice", department: "IT" }
+const employee2: Employee = { id: 2, name: "Steve", department: "PR" }
+const manager: Manager = {
+    id: 3,
+    name: "Kate",
+    employees: [employee1, employee2],
 }
-setTheme("light")
+
+printStaffDetails(employee1)
+printStaffDetails(manager)
