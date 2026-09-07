@@ -1,7 +1,10 @@
-function logMessage(message: string): void {
-    console.log(message)
-    // return "success" // is not valid in case of explicitly set 'void' return value
+function processInput(input: number | string) {
+    if (typeof input === "number") {
+        // type guard – checks the type of a parameter at the runtime
+        console.log(input * 2)
+    } else {
+        console.log(input.toUpperCase())
+    }
 }
 
-const result = logMessage("Hi, Kris!")
-console.log(`The type is: ${result}`)
+processInput(3)
