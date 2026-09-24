@@ -1,27 +1,22 @@
-type Employee = { id: number; name: string; department: string }
-type Manager = { id: number; name: string; employees: Employee[] }
-type Staff = Employee | Manager
-
-function printStaffDetails(staff: Staff): void {
-    if ("employees" in staff) {
-        console.log(
-            `${staff.name} is a manager that is the boss of ${staff.employees.length} employees`,
-        )
-    } else {
-        console.log(
-            `${staff.name} is an employee in the ${staff.department} department`,
-        )
-    }
-    console.log()
+interface Computer {
+    readonly id: number
+    brand: string
+    ram: number
+    storage?: number
+    upgradeRam(increase: number): number
 }
 
-const employee1: Employee = { id: 1, name: "Alice", department: "IT" }
-const employee2: Employee = { id: 2, name: "Steve", department: "PR" }
-const manager: Manager = {
-    id: 3,
-    name: "Kate",
-    employees: [employee1, employee2],
+const laptop: Computer = {
+    id: 1,
+    brand: "Apple",
+    ram: 8,
+    storage: 256,
+    upgradeRam(ram) {
+        this.ram += ram
+        return this.ram
+    },
 }
 
-printStaffDetails(employee1)
-printStaffDetails(manager)
+laptop.storage = 256
+console.log(laptop)
+console.log(laptop.upgradeRam(8))
