@@ -1,22 +1,35 @@
-interface Computer {
-    readonly id: number
-    brand: string
-    ram: number
-    storage?: number
-    upgradeRam(increase: number): number
+interface Person {
+    name: string
 }
 
-const laptop: Computer = {
-    id: 1,
-    brand: "Apple",
-    ram: 8,
-    storage: 256,
-    upgradeRam(ram) {
-        this.ram += ram
-        return this.ram
-    },
+interface DogOwner extends Person {
+    dogName: string
 }
 
-laptop.storage = 256
-console.log(laptop)
-console.log(laptop.upgradeRam(8))
+interface Manager extends Person {
+    managePeople(): void
+    delegateTasks(): void
+}
+
+type Employee = Person | DogOwner | Manager
+
+const getEmployee = (): Employee => {
+    const random = Math.random()
+    if (random < 0.33) {
+        return { name: "stas" }
+    } else if (random < 0.66) {
+        return { name: "anastasiia", dogName: "mika" }
+    }
+    return {
+        name: "ivan",
+        managePeople() {
+            console.log("Managing people...")
+        },
+        delegateTasks() {
+            console.log("Delegating tasks...")
+        },
+    }
+}
+
+const employee: Employee = getEmployee()
+console.log(employee)
